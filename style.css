@@ -1,0 +1,39 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #222;
+    font-size: 0;
+}
+
+svg {
+    display: block;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+h1 {
+    width: 100%;
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 10vh;
+    top: 35%;
+    text-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
+}
+
+path {
+    stroke: white;
+}
+
+rect{
+  opacity: 0.6;
+}
+
+stop#first { stop-color: #f11; }
+stop#second { stop-color: #ff1; }
+stop#third { stop-color: #0ff; }
+stop#fourth { stop-color: #20f; }

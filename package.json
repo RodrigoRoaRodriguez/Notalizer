@@ -1,0 +1,35 @@
+{
+  "name": "notalizer",
+  "version": "0.1.0",
+  "description": "A sound visualizer that displays frequency distribution and recognizes pitch as musical notes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RodrigoRoaRodriguez/Notalizer.git"
+  },
+  "keywords": [
+    "visualizer",
+    "sound",
+    "music",
+    "notes",
+    "tuning",
+    "html"
+  ],
+  "author": "Rodrigo Roa Rodríguez <rodrigo.roa.ro@gmail.com> (https://github.com/RodrigoRoaRodriguez/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RodrigoRoaRodriguez/Notalizer/issues"
+  },
+  "homepage": "https://github.com/RodrigoRoaRodriguez/Notalizer#readme",
+  "eslintConfig": {
+      "env": {
+          "browser": true
+      },
+      "parserOptions": {
+        "ecmaVersion": 6
+      }
+  }
+}

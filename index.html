@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css" media="screen">
+    <script src="./index.js" charset="utf-8"></script>
+
+    <title>Notalizer</title>
+</head>
+<body>
+    <svg id="visualizer"
+    height='100%'
+    width='100%'
+    preserveAspectRatio='none'
+    version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <mask id="mask">
+            <g id="maskGroup">
+          </g>
+        </mask>
+        <linearGradient id="barGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" id = "first" />
+            <stop offset="20%" id = "second" />
+            <stop offset="80%" id = "third" />
+            <stop offset="100%" id = "fourth" />
+        </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#barGradient)" mask="url(#mask)"></rect>
+</svg>
+    <h1>Please allow the use of your microphone</h1>
+</body>
+
+</html>
