@@ -14,7 +14,7 @@ svg {
     position: absolute;
 }
 
-h1 {
+#notalizer h1 {
     width: 100%;
     font-family: "Helvetica Neue", "Helvetica", sans-serif;
     position: absolute;
@@ -25,11 +25,11 @@ h1 {
     text-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
 }
 
-path {
+#notalizer path {
     stroke: white;
 }
 
-rect{
+#notalizer rect{
   opacity: 0.6;
 }
 
