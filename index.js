@@ -3,12 +3,17 @@ const keyTofrequency = (key) => Math.pow(Math.pow(2, 1 / 12), key - 49) * 440
 const frequencyToKey = (frequency) => Math.round(12 * Math.log2(frequency / 440) + 49)
 const keyToColor = (key) => `hsl(${((key-1)%12)*30}, 90%, 65%)`
 const maxIndex = (array) => array.indexOf(Math.max(...array))
+const maxIndexMovingAverage = (array) => array.indexOf(Math.max(...array))
+
+const movingSum = array.map((_, i)=>array[i-1]+array[i]+array[i+1]).slice(1,-1)
+
 const noteMap = ['G#','A','A#','B','C','C#','D','D#','E','F','F#','G']
 const keyToNote = (key) =>
   noteMap[Math.round(key%12)] //Find note
   +Math.round(key/12) // Find octave
 
 const frequencyToNote = (frequency) => keyToNote( frequencyToKey(frequency))
+const extend = (array, positions) => [].concat(t.slice(1,1+2).reverse(), t, t.slice(-1-2,-1).reverse())
 
 let paths = document.getElementsByTagName('path')
 let path
@@ -41,9 +46,17 @@ window.onload = function() {
 
         let heightToBinRatio = BIN_COUNT/256
         for (let i = 0; i < BIN_COUNT - 1; i++) {
-          // log⁡(1+x)/log(256) , x from 0 to 255, normalized log scale.
-            paths[i].setAttribute('d', `M ${i} ${BIN_COUNT-1} l 0,-` + Math.log2(1+frequencyArray[i])*32* heightToBinRatio)
-            //32 = 1/Math.log2(256)*256
+            paths[i].setAttribute('d', `M ${i} ${BIN_COUNT-1} l 0,-` +heightToBinRatio* Math.pow(frequencyArray[i],2)/255)
+            
+
+
+            //Linear scale: simplest implementation
+            //frequencyArray[i]) 
+            
+            // Logaritmic scale: Good in theory but very sensitive for background noise.
+            //Math.log2(1+frequencyArray[i])*32* heightToBinRatio)
+            // 32 = 1/Math.log2(256)*256
+            // log⁡(1+x)/log(256) , x from 0 to 255, normalized log scale.
         }
     }
 
